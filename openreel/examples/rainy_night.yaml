@@ -1,0 +1,18 @@
+# Three-shot storyboard. Render with:
+#   openreel story examples/rainy_night.yaml -o rainy_night.mp4
+title: Rainy night
+model: wan2.2-5b
+style: cinematic
+seed: 42
+cast:
+  Mira: a young woman with short silver hair and a red raincoat
+shots:
+  - prompt: Mira walks through a neon-lit alley at night, rain falling, reflections on wet pavement
+    duration: 4
+    camera: tracking
+  - prompt: Mira stops and looks up into the rain, neon signs flickering above her
+    duration: 3
+    transition: continue   # starts from the last frame of the previous shot
+  - prompt: close-up of Mira smiling, raindrops on her face, soft neon glow
+    duration: 3
+    camera: dolly-in

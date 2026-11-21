@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openreel"
+version = "0.1.0"
+description = "Seedance-style text/image-to-video, multi-shot storyboards and audio with open-weight models"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.4",
+    "diffusers>=0.43",
+    "transformers>=5.0",
+    "accelerate>=1.0",
+    "sentencepiece",
+    "ftfy",
+    "imageio[ffmpeg]>=2.30",
+    "pillow>=10",
+    "numpy>=1.26",
+    "pyyaml>=6",
+    "huggingface_hub>=1.0",
+    "fsspec",
+]
+
+[project.optional-dependencies]
+app = ["gradio>=6"]
+test = ["pytest>=8", "safetensors"]
+
+[project.scripts]
+openreel = "openreel.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = ["ignore::DeprecationWarning", "ignore::FutureWarning", "ignore::UserWarning"]

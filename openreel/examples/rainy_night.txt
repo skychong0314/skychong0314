@@ -1,0 +1,11 @@
+# Same storyboard in the compact script format.
+#   [4s]  shot length    [+3s]  continue from the previous shot's last frame
+#   | name  camera move  (see: openreel presets)
+title: Rainy night
+model: wan2.2-5b
+style: cinematic
+seed: 42
+cast: Mira = a young woman with short silver hair and a red raincoat
+[4s] Mira walks through a neon-lit alley at night, rain falling, reflections on wet pavement | tracking
+[+3s] Mira stops and looks up into the rain, neon signs flickering above her
+[3s] close-up of Mira smiling, raindrops on her face, soft neon glow | dolly-in
